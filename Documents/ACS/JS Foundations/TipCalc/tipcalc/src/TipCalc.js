@@ -11,7 +11,7 @@ function TipCalc() {
     let split_person = total_bill / split
 
      return (
-        <div className='TipForm'>
+        <div className='calc'>
        <form>
          <input 
            type="number"
@@ -31,7 +31,7 @@ function TipCalc() {
             onChange={(e) => setSplit(e.targetvalue )}
          />
         </form>
-        <div className='calc'>
+        <div className='result'>
             <div>Total bill: ${total_bill}</div>
             <div>Recommended tip: ${tip_amount}</div>
             <div>Recommended split per guest: ${split_person}</div>
@@ -39,3 +39,5 @@ function TipCalc() {
         </div>
      )
    }
+
+   export default TipCalc;
