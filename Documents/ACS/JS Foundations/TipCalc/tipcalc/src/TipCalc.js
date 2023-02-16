@@ -1,4 +1,4 @@
-import react, { useState } from 'react'
+import { useState } from 'react'
 import './TipCalc.css'
 
 function TipCalc() {
@@ -6,9 +6,11 @@ function TipCalc() {
     const [tip, setTip] = useState(0)
     const [split, setSplit] = useState(0)
 
-    let tip_amount = bill * tip 
-    let total_bill = tip_amount + bill
-    let split_person = total_bill / split
+    let tip_amount = parseFloat(bill) * parseFloat(tip) / (100);
+    let total_bill = parseFloat(tip_amount) + parseFloat(bill);
+    let split_person = parseFloat(total_bill) / parseFloat(split);
+
+    console.log(split_person, total_bill, split);  
 
      return (
         <div className='calc'>
@@ -28,16 +30,16 @@ function TipCalc() {
          <input 
             type="number"
             value={ split }
-            onChange={(e) => setSplit(e.targetvalue )}
+            onChange={(e) => setSplit(e.target.value )}
          />
         </form>
         <div className='result'>
-            <div>Total bill: ${total_bill}</div>
-            <div>Recommended tip: ${tip_amount}</div>
-            <div>Recommended split per guest: ${split_person}</div>
+            <div>Total bill: ${total_bill.toFixed(2)}</div>
+            <div>Recommended tip: ${tip_amount.toFixed(2)}</div>
+            <div>Recommended split per guest: ${split_person.toFixed(2)}</div>
         </div>
-        </div>
-     )
-   }
+    </div>
+  )
+}
 
-   export default TipCalc;
+export default TipCalc;

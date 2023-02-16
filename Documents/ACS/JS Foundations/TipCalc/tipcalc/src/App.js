@@ -4,6 +4,7 @@ import Title from './Title';
 import TipCalc from './TipCalc';
 
 function App() {
+  console.log("HelloWorld")
   return (
     <div className="App">
       <Title />
