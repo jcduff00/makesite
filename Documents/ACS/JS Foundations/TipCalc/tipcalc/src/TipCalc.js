@@ -34,8 +34,8 @@ function TipCalc() {
          />
         </form>
         <div className='result'>
-            <div>Total bill: ${total_bill.toFixed(2)}</div>
             <div>Recommended tip: ${tip_amount.toFixed(2)}</div>
+            <div>Total bill: ${total_bill.toFixed(2)}</div>
             <div>Recommended split per guest: ${split_person.toFixed(2)}</div>
         </div>
     </div>
